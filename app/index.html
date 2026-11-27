@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doorbell Deals — Black Friday Deal Finder 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <p class="kicker">Checked 27 November 2026 · Prices can move or sell out</p>
+    <h1>Real Black Friday deals,<br>with the receipts.</h1>
+    <p class="sub">Every price below was read on a store page or a dated deals report during this research session. Each card says where the price came from and whether the cut looks like a genuine low, a strong price, or a routine sale dressed up for the weekend.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<section class="controls" aria-label="Search and filters">
+  <label class="search">Search deals
+    <input id="q" type="search" placeholder="Try “AirPods”, “OLED”, “vacuum”…">
+  </label>
+  <label>Category
+    <select id="cat"></select>
+  </label>
+  <label>Store
+    <select id="store"></select>
+  </label>
+  <label>Signal
+    <select id="signal">
+      <option value="">Any signal</option>
+      <option value="new-low">New low</option>
+      <option value="strong">Strong price</option>
+      <option value="routine">Routine / inflated</option>
+    </select>
+  </label>
+  <label>Minimum discount
+    <select id="min">
+      <option value="0">Any discount</option>
+      <option value="25">25% or more</option>
+      <option value="40">40% or more</option>
+      <option value="50">50% or more</option>
+      <option value="60">60% or more</option>
+    </select>
+  </label>
+  <label>Sort by
+    <select id="sort">
+      <option value="discount">Biggest % off</option>
+      <option value="savings">Biggest $ saved</option>
+      <option value="price">Lowest price</option>
+      <option value="name">Product name</option>
+    </select>
+  </label>
+  <button id="reset" type="button">Reset filters</button>
+</section>
+
+<p class="count" id="count" role="status"></p>
+<main class="grid" id="grid"></main>
+<p class="empty" id="empty" hidden>No deals match those filters. Loosen the discount floor or clear the search.</p>
+
+<section class="method">
+  <h2>How to read the signals</h2>
+  <div class="method-grid">
+    <article><h3><span class="dot low"></span>New low</h3><p>The checked price beats the earlier prices found in this session's sources, or a dated report calls it an all-time low.</p></article>
+    <article><h3><span class="dot strong"></span>Strong price</h3><p>A deep cut against the store's own reference price, with no cheaper identical offer spotted in the cross-check.</p></article>
+    <article><h3><span class="dot routine"></span>Routine / inflated</h3><p>The discount is shallow, the reference price looks padded, another store matches or beats it, or the “sale” price is close to a recent everyday price.</p></article>
+  </div>
+  <p class="fine">Reference prices are the store's own “was”, “reg.” or comparable-value figures as read on 2026-11-27; a comparable value is not always a price the item recently sold at, so treat the percentage as a starting point and the evidence note as the verdict. Always confirm the price on the store page before paying.</p>
+</section>
+
+<div class="modal-back" id="modalBack" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="close" id="mClose" type="button" aria-label="Close details">×</button>
+    <p class="m-store" id="mStore"></p>
+    <h2 id="mTitle"></h2>
+    <p class="m-price" id="mPrice"></p>
+    <dl id="mFacts"></dl>
+    <p class="m-evidence" id="mEvidence"></p>
+    <a class="buy" id="mLink" href="#" target="_blank" rel="noopener noreferrer">View at the store</a>
+  </div>
+</div>
+
+<footer><p>Built for the make.fun Black Friday deal finder bounty. Prices checked 2026-11-27; stores may change or end offers at any time.</p></footer>
+<script src="app.js"></script>
+</body>
+</html>
